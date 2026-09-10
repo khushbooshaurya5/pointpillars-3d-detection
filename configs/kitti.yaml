@@ -1,0 +1,26 @@
+# Full PointPillars training on KITTI (Car class). Needs a GPU.
+data:
+  root: data/kitti_object/training
+  pc_range: [0.0, -39.68, -3.0, 69.12, 39.68, 1.0]   # x,y,z min then max (LiDAR frame)
+  voxel_size: [0.16, 0.16]
+  max_points: 32
+  max_pillars: 12000
+  synth_len: 8
+
+model:
+  num_classes: 1
+  pillar_channels: 64
+  backbone_base: 64
+  anchor_sizes: [[1.6, 3.9, 1.5]]     # w, l, h (Car)
+  anchor_rotations: [0.0, 1.57]
+  anchor_z: -1.0
+
+train:
+  epochs: 80
+  batch_size: 4
+  lr: 0.0003
+  weight_decay: 0.01
+  pos_iou: 0.6
+  neg_iou: 0.45
+  score_thr: 0.3
+  num_workers: 4

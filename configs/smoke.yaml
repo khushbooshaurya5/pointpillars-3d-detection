@@ -1,0 +1,26 @@
+# Tiny config for smoke test / CI (CPU, seconds).
+data:
+  root: data/kitti_object/training
+  pc_range: [0.0, -20.0, -3.0, 40.0, 20.0, 1.0]
+  voxel_size: [0.32, 0.32]
+  max_points: 16
+  max_pillars: 3000
+  synth_len: 6
+
+model:
+  num_classes: 1
+  pillar_channels: 32
+  backbone_base: 16
+  anchor_sizes: [[1.6, 3.9, 1.5]]
+  anchor_rotations: [0.0, 1.57]
+  anchor_z: -1.0
+
+train:
+  epochs: 2
+  batch_size: 2
+  lr: 0.0003
+  weight_decay: 0.01
+  pos_iou: 0.4
+  neg_iou: 0.3
+  score_thr: 0.2
+  num_workers: 0
