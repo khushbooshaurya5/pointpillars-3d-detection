@@ -1,5 +1,7 @@
 # PointPillars — 3D Object Detection on KITTI
 
+### ▶ Live demo: **https://khushbooshaurya5.github.io/khushboo-portfolio-projects/demos/pointpillars/**
+
 A compact, **from-scratch** implementation of PointPillars (Lang et al., CVPR
 2019): the fast, industry-standard LiDAR 3D detector that turns a point cloud
 into a BEV pseudo-image and runs a 2D SSD detector on it. Predicts 7-DoF
